@@ -1,0 +1,40 @@
+#intro {
+    text-align: center;
+    margin: auto;
+    width: 30%;
+    background-color: #80808088;
+    padding-top: 1px;
+    padding-bottom: 10px;
+    border-radius: 4px;
+    visibility: visible;
+    display: inline-block;
+}
+
+#intro p {
+   margin-top: 5px;
+   margin-bottom: 5px; 
+}
+
+#statsList {
+    text-align: left;
+}
+
+#shop {
+    display: inline-block;
+    width: 30%;
+    background-color: #80808088;
+    padding-top: 1px;
+    padding-bottom: 10px;
+    border-radius: 4px;
+    visibility: visible;
+}
+
+#shop h4,button {
+    text-align: center;
+}
+#buy {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+

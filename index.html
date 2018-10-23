@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>RPG</title>
+</head>
+
+<body>
+
+    <div id="shop">
+        <h4>Weapons shop.</h4>
+        <input type="radio" name="shopItem" class="shopItem" id="shopItem1" value="1"><label for="shopItem1">Rusty Sword:  A/15 Lvl/2  D10</label><br>
+        <input type="radio" name="shopItem" class="shopItem" id="shopItem2" value="2"><label for="shopItem2">Wooden staff: A/13 Lvl/3  D/20</label><br>
+        <input type="radio" name="shopItem" class="shopItem" id="shopItem3" value="3"><label for="shopItem3">Iron mace:    A/20 Lvl/5  D/30</label><br>
+        <input type="radio" name="shopItem" class="shopItem" id="shopItem4" value="4"><label for="shopItem4">Ok sword:     A/27 Lvl/6  D/25</label><br>
+        <input type="radio" name="shopItem" class="shopItem" id="shopItem5" value="5"><label for="shopItem5">Great Sword:  A/35 Lvl/8  D/35</label><br>
+        <input type="radio" name="shopItem" class="shopItem" id="shopItem6" value="6"><label for="shopItem6">Best Sword:   A/40 Lvl/10 D/40</label><br>
+        <button type="button" name="buy" id="buy">Buy</button>
+    </div>
+
+    <div id="intro">
+        <h2>RPG Game</h2>
+        <h4 id="phaseTitle">Create your character.</h4>
+        <form id="playerCreation">
+            <label for="playerName">Enter your name: </label> <br>
+            <input type="text" name="playerName" id="playerName"> <br>
+            <p>Choose a class:</p>
+            <input type="radio" name="characterClass" class="characterClass" id="characterClass0" value="0" hidden checked>
+            <input type="radio" name="characterClass" class="characterClass" id="characterClass1" value="1"><label for="characterClass1">Duelist</label>
+            <input type="radio" name="characterClass" class="characterClass" id="characterClass2" value="2"><label for="characterClass2">Knight</label>
+            <input type="radio" name="characterClass" class="characterClass" id="characterClass3" value="3"><label for="characterClass3">Guardian</label>
+        </form>
+        <button type="button" name="start" id="start">Create character.</button>
+        <ul id="statsList">
+            <li id="statsName">Name: </li>
+            <li id="statsHP">HP: </li>
+            <li id="weapon">Weapon: </li>
+            <li id="durability">Durability: </li>
+            <li id="attack">Attack: </li>
+            <li id="defense">Defense: </li>
+            <li id="experience">Exp Points: </li>
+            <li id="level">Level: </li>
+        </ul>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
