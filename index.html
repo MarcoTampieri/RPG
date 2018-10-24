@@ -10,15 +10,18 @@
 
 <body>
 
-    <div id="shop">
-        <h4>Weapons shop.</h4>
-        <input type="radio" name="shopItem" class="shopItem" id="shopItem1" value="1"><label for="shopItem1">Rusty Sword:  A/15 Lvl/2  D10</label><br>
-        <input type="radio" name="shopItem" class="shopItem" id="shopItem2" value="2"><label for="shopItem2">Wooden staff: A/13 Lvl/3  D/20</label><br>
-        <input type="radio" name="shopItem" class="shopItem" id="shopItem3" value="3"><label for="shopItem3">Iron mace:    A/20 Lvl/5  D/30</label><br>
-        <input type="radio" name="shopItem" class="shopItem" id="shopItem4" value="4"><label for="shopItem4">Ok sword:     A/27 Lvl/6  D/25</label><br>
-        <input type="radio" name="shopItem" class="shopItem" id="shopItem5" value="5"><label for="shopItem5">Great Sword:  A/35 Lvl/8  D/35</label><br>
-        <input type="radio" name="shopItem" class="shopItem" id="shopItem6" value="6"><label for="shopItem6">Best Sword:   A/40 Lvl/10 D/40</label><br>
-        <button type="button" name="buy" id="buy">Buy</button>
+    <div id="giocatore">
+        <h4 id="gH4">Player stats: </h4>
+        <ul id="statsList">
+            <li id="statsName"></li>
+            <li id="statsHP"> </li>
+            <li id="weapon"></li>
+            <li id="durability"></li>
+            <li id="attack"></li>
+            <li id="defense"></li>
+            <li id="experience"></li>
+            <li id="level"></li>
+        </ul>
     </div>
 
     <div id="intro">
@@ -28,24 +31,60 @@
             <label for="playerName">Enter your name: </label> <br>
             <input type="text" name="playerName" id="playerName"> <br>
             <p>Choose a class:</p>
-            <input type="radio" name="characterClass" class="characterClass" id="characterClass0" value="0" hidden checked>
+            <input type="radio" name="characterClass" class="characterClass" id="characterClass0" value="0" hidden
+                checked>
             <input type="radio" name="characterClass" class="characterClass" id="characterClass1" value="1"><label for="characterClass1">Duelist</label>
             <input type="radio" name="characterClass" class="characterClass" id="characterClass2" value="2"><label for="characterClass2">Knight</label>
             <input type="radio" name="characterClass" class="characterClass" id="characterClass3" value="3"><label for="characterClass3">Guardian</label>
         </form>
-        <button type="button" name="start" id="start">Create character.</button>
-        <ul id="statsList">
-            <li id="statsName">Name: </li>
-            <li id="statsHP">HP: </li>
-            <li id="weapon">Weapon: </li>
-            <li id="durability">Durability: </li>
-            <li id="attack">Attack: </li>
-            <li id="defense">Defense: </li>
-            <li id="experience">Exp Points: </li>
-            <li id="level">Level: </li>
+        <button type="button" name="createCharacter" id="createCharacter">Create character.</button>
+
+        <div id="shop">
+            <h4>Weapons shop.</h4>
+            <input type="radio" name="shopItem" class="shopItem" id="shopItem1" value="1"><label for="shopItem1">Rusty
+                Sword: A/15 Lvl/2 D10</label><br>
+            <input type="radio" name="shopItem" class="shopItem" id="shopItem2" value="2"><label for="shopItem2">Wooden
+                staff: A/13 Lvl/3 D/20</label><br>
+            <input type="radio" name="shopItem" class="shopItem" id="shopItem3" value="3"><label for="shopItem3">Iron
+                mace:
+                A/20 Lvl/5 D/30</label><br>
+            <input type="radio" name="shopItem" class="shopItem" id="shopItem4" value="4"><label for="shopItem4">Ok
+                sword:
+                A/27 Lvl/6 D/25</label><br>
+            <input type="radio" name="shopItem" class="shopItem" id="shopItem5" value="5"><label for="shopItem5">Great
+                Sword: A/35 Lvl/8 D/35</label><br>
+            <input type="radio" name="shopItem" class="shopItem" id="shopItem6" value="6"><label for="shopItem6">Best
+                Sword: A/40 Lvl/10 D/40</label><br>
+            <button type="button" name="buy" id="buy">Buy</button>
+        </div>
+    </div>
+
+    <div id="enemy">
+        <h4 id="eH4">Enemy stats: </h4>
+        <ul id="enemyStats">
+            <li id="enemyName"></li>
+            <li id="enemyHP"></li>
+            <li id="enemyAtt"></li>
+            <li id="enemyDef"></li>
+            <li id="enemyLvl"></li>
         </ul>
     </div>
 
+    <div class="commands">
+        <button></button>
+    </div>
+
+    <div class="empty">
+
+    </div>
+
+    <div class="pAnimation">
+
+    </div>
+
+    <div class="eAnimation">
+
+    </div>
 
     <script src="script.js"></script>
 </body>

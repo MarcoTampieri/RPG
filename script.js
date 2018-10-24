@@ -9,8 +9,12 @@ class Player {
     };
 };
 
-let start = document.getElementById("start");
 let intro = document.getElementById("intro");
+let start = document.getElementById("createCharacter");
+let giocatore = document.getElementById("giocatore");
+let enemyInfo = document.getElementById("enemy");
+let shop = document.getElementById("shop");
+
 let statsList = document.getElementById("statsList");
 let statsName = document.getElementById("statsName");
 let statsHP = document.getElementById("statsHP");
@@ -20,7 +24,7 @@ let statsAtt = document.getElementById("attack");
 let statsDef = document.getElementById("defense");
 let statsExp = document.getElementById("experience");
 let statsLvl = document.getElementById("level");
-intro.removeChild(statsList);
+intro.removeChild(shop);
 
 function makeCharacter() {
 
@@ -31,10 +35,7 @@ function makeCharacter() {
 
     if (inputName == '' || characterClass == 0) {
         alert("Please enter a name and select a class.");
-        console.log(inputName);
-        console.log(characterClass);
     } else {
-        let player = {}
         console.log(characterClass);
         characterClass = Number(characterClass);
         switch (characterClass) {
@@ -51,26 +52,70 @@ function makeCharacter() {
                 console.log(thePlayer)
                 break;
         };
+
     }
 
-    
     console.log(thePlayer);
-    let form = document.getElementById("playerCreation");
-    let h4 = document.getElementById("phaseTitle");
 
-    intro.removeChild(form);
-    intro.removeChild(start);
-    intro.appendChild(statsList);
-    h4.innerText = "Character Info:";
-    statsName.innerText = "Name: " + thePlayer.name;
-    statsHP.innerText = "HP: " + thePlayer.HP;
-    statsAtt.innerText = "Attack: " + thePlayer.basicAttack;
-    statsDef.innerText = "Defense: " + thePlayer.basicDefense;
-    statsExp.innerText = "Exp points: " + thePlayer.experiencePoints;
-    statsLvl.innerText = "Level: " + thePlayer.level;
+    while (intro.hasChildNodes()) {
+        intro.removeChild(intro.firstChild);
+    };
+    intro.appendChild(shop);
+
+    statsList.style.listStyleType = "none";
+    statsName.innerHTML = "<b>Name:</b> " + thePlayer.name;
+    statsHP.innerHTML = "<b>HP:</b> " + thePlayer.HP;
+    statsWeapon.innerHTML = "<b>Weapon:</b> ";
+    statsDur.innerHTML = "<b>Durability:</b> ";
+    statsAtt.innerHTML = "<b>Attack:</b> " + thePlayer.basicAttack;
+    statsDef.innerHTML = "<b>Defense:</b> " + thePlayer.basicDefense;
+    statsExp.innerHTML = "<b>Exp points:</b> " + thePlayer.experiencePoints;
+    statsLvl.innerHTML = "<b>Level:</b> " + thePlayer.level;
+    enemyInfo.style.visibility = "visible";
+    giocatore.style.visibility = "visible";
+    makeEnemy()
 }
 
 start.addEventListener("click", makeCharacter);
+
+
+function makeEnemy() {
+
+    class Npc {
+        constructor(name, HP, basicAttack, basicDefense, level) {
+            this.name = name;
+            this.HP = HP;
+            this.basicAttack = basicAttack;
+            this.basicDefense = basicDefense;
+            this.level = level;
+        };
+    };
+
+    let enemyArray = [
+        new Npc("Bandit", 250, 10, 10, 3),
+        new Npc("Skeleton", 200, 15, 5, 3),
+        new Npc("Slime", 300, 5, 15, 3)
+    ];
+    let randomEnemy = Math.floor(Math.random() * enemyArray.length);
+    
+    let enemy = enemyArray[randomEnemy];
+    
+    enemyStats = document.getElementById("enemyStats");
+    enemyName = document.getElementById("enemyName");
+    enemyHP = document.getElementById("enemyHP");
+    enemyAtt = document.getElementById("enemyAtt");
+    enemyDef = document.getElementById("enemyDef");
+    enemyLvl = document.getElementById("enemyLvl");
+
+    enemyStats.style.listStyleType = "none";
+    enemyName.innerHTML = "<b>Name: </b> " + enemy.name;
+    enemyHP.innerHTML = "<b>HP: </b> " + enemy.HP;
+    enemyAtt.innerHTML = "<b>Atttack: </b> " + enemy.basicAttack;
+    enemyDef.innerHTML = "<b>Defense: </b> " + enemy.basicDefense;
+    enemyLvl.innerHTML = "<b>Level: </b> " + enemy.level;
+
+};
+
 
 
 class Weapon {
@@ -82,7 +127,7 @@ class Weapon {
     };
 };
 
-let shop = [
+let weaponArray = [
     new Weapon("Rusty sword", 15, 2, 10),
     new Weapon("Wood staff", 13, 3, 20),
     new Weapon("Iron mace", 20, 5, 30),
@@ -91,18 +136,4 @@ let shop = [
     new Weapon("Best sword", 40, 10, 40),
 ];
 
-class Npc {
-    constructor(name, HP, basicAttack, basicDefense, level) {
-        this.name = name;
-        this.HP = HP;
-        this.basicAttack = basicAttack;
-        this.basicDefense = basicDefense;
-        this.level = level;
-    };
-};
 
-let enemy = [
-    new Npc("Bandit", 250, 10, 10, 3),
-    new Npc("Skeleton", 200, 15, 5, 3),
-    new Npc("Slime", 300, 5, 15, 3)
-];
