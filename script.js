@@ -1,7 +1,7 @@
 class Player {
     constructor(name, HP, basicAttack, basicDefense, level, experiencePoints) {
         this.name = name;
-        this.HP = HP
+        this.HP = HP;
         this.basicAttack = basicAttack;
         this.basicDefense = basicDefense;
         this.level = level;
